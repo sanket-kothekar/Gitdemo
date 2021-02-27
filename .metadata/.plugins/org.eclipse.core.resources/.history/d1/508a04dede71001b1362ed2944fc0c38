@@ -1,0 +1,23 @@
+package Academy;
+
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+import pageobject.landingpage;
+import resources.base;
+
+public class validatepage extends base{
+
+	@Test
+	public void validation() throws IOException
+	{
+		driver=intialize();
+		driver.get("http://www.qaclickacademy.com/");
+		landingpage l=new landingpage(driver);
+		Assert.assertEquals(l.getTitle().getText(),"FEATURED COURSE1S");
+		
+	}
+}

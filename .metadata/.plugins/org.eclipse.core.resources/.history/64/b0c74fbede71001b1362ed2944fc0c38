@@ -1,0 +1,18 @@
+package Academy;
+
+
+import org.testng.annotations.Test;
+
+import resources.base;
+
+public class validatepage extends base{
+
+	@Test
+	public void validation()
+	{
+		driver=intialize();
+		driver.get("http://www.qaclickacademy.com/");
+		
+		
+	}
+}

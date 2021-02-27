@@ -1,0 +1,19 @@
+package Academy;
+
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+import pageobject.landingpage;
+
+public class validatepage extends base{
+	
+	
+	@Test
+	public void validation()
+	{
+		landingpage l=new landingpage(driver);
+		Assert.assertEquals(l.getTitle().getText(),"FEATURED COURSES");
+		
+	}
+	
+}

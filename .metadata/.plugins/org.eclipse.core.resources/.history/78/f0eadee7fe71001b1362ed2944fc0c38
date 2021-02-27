@@ -1,0 +1,41 @@
+package Academy;
+
+
+import java.io.IOException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import alpha.demo1;
+import junit.framework.Assert;
+import pageobject.landingpage;
+import resources.base;
+
+public class validatepage extends base{
+	
+	private static Logger log=LogManager.getLogger(base.class.getName());
+	@BeforeTest
+	public void intial() throws IOException
+	{
+		driver=intialize();
+		driver.get("http://www.qaclickacademy.com/");
+	}
+	@Test
+	public void validation() throws IOException
+	{
+		
+		landingpage l=new landingpage(driver);
+		Assert.assertEquals(l.getTitle().getText(),"FEATURED COURSES");
+		Assert.assertTrue(l.contact().isDisplayed());
+		
+	}
+	
+	@AfterTest
+	public void tear()
+	{
+		driver.close();
+	}
+}

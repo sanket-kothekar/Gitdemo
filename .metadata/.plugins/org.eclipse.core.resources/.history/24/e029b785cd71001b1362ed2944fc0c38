@@ -1,0 +1,25 @@
+package Academy;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import pageobject.landingpage;
+import pageobject.loginpage;
+import resources.base;
+
+public class homepage extends base{
+
+	@Test
+	public void  basepagenav() throws IOException
+	{
+		driver=intialize();
+		driver.get("http://www.qaclickacademy.com/");
+		landingpage l=new landingpage(driver);
+		l.enter().click();
+		loginpage p=new loginpage(driver);
+		p.email().sendKeys("aaaaa");
+		p.password().sendKeys("sanket123");
+	}
+	
+}

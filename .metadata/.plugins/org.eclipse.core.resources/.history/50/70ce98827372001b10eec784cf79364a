@@ -1,0 +1,29 @@
+package Academy;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import pageobject.landingpage;
+
+
+
+
+
+public class validationnavigation extends base {
+	 public	WebDriver driver=null;
+	public void anything() throws IOException
+	{
+		driver=intialize();
+		
+		driver.get("http://www.qaclickacademy.com/");
+		landingpage l=new landingpage(driver);
+		Assert.assertTrue(l.navibar().isDisplayed());
+		
+		
+
+	}
+	
+
+}

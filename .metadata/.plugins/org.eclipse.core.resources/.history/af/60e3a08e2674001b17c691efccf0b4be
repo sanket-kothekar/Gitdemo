@@ -1,0 +1,3 @@
+module windowpopup {
+	requires org.openqa.selenium.core;
+}

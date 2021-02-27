@@ -1,0 +1,37 @@
+package windowpopup;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class fileupload {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe"); 
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://altoconvertpdftojpg.com/");
+		driver.findElement(By.xpath("//span[contains(text(),'Choose File')]")).click();
+		Thread.sleep(6000);
+		Runtime.getRuntime().exec("C:\\Users\\VIJAY KOTHEKAR\\Documents\\fileupload.exe");
+		//WebDriverWait wait=new WebDriverWait(driver,20);
+		//wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//button[contains(text(),'Convert Now!')]")));
+		Thread.sleep(6000);
+		//WebDriverWait(driver, 20).until(EC.element_to_be_clickable((ByXPath, "//input[@class='button' and @id='PersonalDetailsButton'][@data-controltovalidate='PersonalDetails']"))).click()
+		driver.findElement(By.xpath("//button[contains(text(),'Convert Now!')]")).click();
+		Thread.sleep(6000);
+        //driver.findElement(By.xpath("//*[@id=\"btnAddCust\"]")).click();
+        //WebElement el = driver.findElement(By.xpath("//button[contains(text(),'Convert Now!')]"));
+        //el.click();
+		//wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[contains(text(),'Download')]")));
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//a[contains(text(),'Download')]")).click();
+	}
+
+}

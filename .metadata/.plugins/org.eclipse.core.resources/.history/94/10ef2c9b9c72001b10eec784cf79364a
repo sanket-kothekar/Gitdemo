@@ -1,0 +1,43 @@
+package Academy;
+
+import java.io.IOException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
+
+import pageobject.landingpage;
+
+
+
+
+
+public class validationnavigation extends base {
+	 public	WebDriver driver;
+	 private static Logger log=LogManager.getLogger(base.class.getName());
+	 @Test
+	public void anything() throws IOException
+	{
+		driver=intialize();
+		
+		driver.get("http://www.qaclickacademy.com/");
+		landingpage l=new landingpage(driver);
+		Assert.assertTrue(l.navibar().isDisplayed());
+		
+		
+
+	}
+	 
+	/* @AfterTest
+	 public void tear()
+	 {
+		 	driver.close();
+			log.info("Driver close");
+			driver=null;
+	 }
+	
+*/
+}

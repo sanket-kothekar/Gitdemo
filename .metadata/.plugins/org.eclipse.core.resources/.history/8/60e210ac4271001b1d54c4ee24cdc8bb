@@ -1,0 +1,12 @@
+package objectrepositary;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class redifflogin {
+
+	WebDriver driver;
+	By username=By.xpath("//input[@id='login1']");
+
+	
+}

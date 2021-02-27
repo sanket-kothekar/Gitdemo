@@ -1,0 +1,25 @@
+package Academy;
+
+import java.io.IOException;
+
+
+import org.testng.Assert;
+
+
+
+public class validationnavigation extends base {
+	
+	public void anything() throws IOException
+	{
+		driver=intialize();
+		
+		driver.get("http://www.qaclickacademy.com/");
+		landingpage l=new landingpage(driver);
+		Assert.assertTrue(l.navibar().isDisplayed());
+		
+		
+
+	}
+	
+
+}

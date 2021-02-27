@@ -1,0 +1,13 @@
+package Academy;
+
+import resources.base;
+
+public class validationnavigation extends base {
+
+	public void anything()
+	{
+		driver=intialize();
+		//	log.info("Driver intialize");
+			driver.get("http://www.qaclickacademy.com/");
+	}
+}

@@ -1,0 +1,29 @@
+package Academy;
+
+import java.io.IOException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+
+import pageobject.landingpage;
+import resources.base;
+
+public class validationnavigation extends base {
+	private static Logger log=LogManager.getLogger(base.class.getName());
+
+	public void anything() throws IOException
+	{
+		driver=intialize();
+		log.info("Driver intialize");
+		driver.get("http://www.qaclickacademy.com/");
+		landingpage l=new landingpage(driver);
+		Assert.assertTrue(l.navibar().isDisplayed());
+		log.info("nav bar is all right");
+		
+		
+
+	}
+
+}

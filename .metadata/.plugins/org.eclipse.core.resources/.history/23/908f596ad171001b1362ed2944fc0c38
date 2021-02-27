@@ -1,0 +1,41 @@
+package Academy;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pageobject.landingpage;
+import pageobject.loginpage;
+import resources.base;
+
+public class homepage extends base{
+
+	@Test(dataProvider="getdata")
+	public void  basepagenav(String username,String password) throws IOException
+	{
+		driver=intialize();
+		driver.get("http://www.qaclickacademy.com/");
+		landingpage l=new landingpage(driver);
+		l.enter().click();
+		loginpage p=new loginpage(driver);
+		p.email().sendKeys(username);
+		p.password().sendKeys(password);
+		p.button().click();
+	}
+	
+	@DataProvider
+	public Object[][] getdata()
+	{
+		//row stand for many different data
+		//
+		Object[][] data	=new Object[2][2];
+		 data[0][0]="Samket";
+		 data[0][1]="Snaket2112@";
+		 
+		data[1][0]="Samket";
+	 	data[1][1]="Snaket2112@";
+		 return data;
+	}
+	
+}

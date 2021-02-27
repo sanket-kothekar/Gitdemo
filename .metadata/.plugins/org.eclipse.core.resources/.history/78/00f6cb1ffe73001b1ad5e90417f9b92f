@@ -1,0 +1,44 @@
+package databasecoo;
+
+import java.sql.ResultSet;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+//import com.mysql.jdbc.Statement;
+
+//import sun.security.rsa.RSACore;
+
+//import com.sun.jdi.connect.spi.Connection;
+
+
+public class jdbconnection {
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		try {
+	        // The newInstance() call is a work around for some
+	        // broken Java implementations
+
+	        Class.forName("com.mysql.jdbc.Driver").newInstance();
+	    } catch (Exception ex) {
+	        // handle the error
+	    }
+		String host="localhost";
+
+		String port= "3306";
+
+		Connection con=DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/qadbt", "root", "admin");
+
+		Statement s=con.createStatement();
+
+		ResultSet rs=s.executeQuery("select * from credentials where scenario ='rewardscard'");
+	
+		while(rs.next()) {
+	  System.out.println(rs.getString("id"));
+	  System.out.println(rs.getString("name"));
+	  System.out.println(rs.getString("location"));
+	}
+ 
+}
+}
